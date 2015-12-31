@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?trvnm4');
+    src: url('fonts/icomoon.eot?trvnm4#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?trvnm4') format('truetype'), url('fonts/icomoon.woff?trvnm4') format('woff'), url('fonts/icomoon.svg?trvnm4#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-whatsapp:before {
+    content: "\e900";
+}
+
+.icon-share:before {
+    content: "\e901";
+}
+
+.icon-googlePlus:before {
+    content: "\e902";
+}
+
+.icon-facebook:before {
+    content: "\e903";
+}
+
+.icon-twitter:before {
+    content: "\e904";
+}
+
+.icon-pinterest:before {
+    content: "\e905";
+}
+
+.icon-email:before {
+    content: "\e906";
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 20px;
+}
+
+.shareButton {
+    border: none;
+    background: #FC0;
+    border-radius: 50%;
+    padding: 8px 10px;
+    font-size: 20px;
+    color: #6D6666;
+    outline: none;
+    cursor: pointer;
+}
+
+.shareButton:hover {
+    background: #FFC200;
+}
+
+.networksHolder{
+	margin-top: 10px;
+	display: none;
+}
+
+.networksHolder .networksList{
+	list-style: none;
+    background: #11C6CA;
+    position: absolute;    
+    padding: 10px;
+}
+
+.networksHolder .networksList .networkItem{
+	padding: 5px 10px;
+    display: inline;
+    cursor: pointer;
+}
+
+.networksHolder .networksList .networkItem:hover{
+	color : #fff;
+}
+
+a.networkItem{
+	text-decoration: none;
+	color: #000;
+}
+
+a.networkItem:hover {
+	color: #fff;
+}
+
+
