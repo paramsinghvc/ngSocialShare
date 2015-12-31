@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="SocialShareApp">
+<head>
+	<title>Angular Social Share</title>
+	<link rel="stylesheet" type="text/css" href="/dist/style.css">
+</head>
+<body ng-controller="indexController as vm">
+	<social-share options="vm.shareOptions1"></social-share>
+
+	<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="/node_modules/angular/angular.min.js"></script>	
+
+	<script src="/dist/ngShare.js"></script>
+	<script src="bundle.js"></script>
+</body>
+</html>

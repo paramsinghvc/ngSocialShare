@@ -1,8 +1,6 @@
 import SocialShareDirective from './socialShareDirective';
 import SocialShareService from './socialShareService';
-import IndexController from './indexController';
 
-angular.module(['SocialShare'], [])
+angular.module(['ngSocialShare'], [])
 	.service('SocialShareService', SocialShareService)
 	.directive('socialShare', SocialShareDirective.directiveFactory)
-	.controller('indexController', IndexController)

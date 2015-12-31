@@ -122,7 +122,7 @@ export default class SocialShareService {
         let networks = [];
 
         for (let n of en) {
-            if (this.en.indexOf(n) > -1)
+            if (en.indexOf(n) > -1)
                 networks.push(n);
         }
 

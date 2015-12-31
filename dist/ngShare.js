@@ -46,12 +46,10 @@
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(1), __webpack_require__(2), __webpack_require__(3)], __WEBPACK_AMD_DEFINE_RESULT__ = function (_socialShareDirective, _socialShareService, _indexController) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(1), __webpack_require__(2)], __WEBPACK_AMD_DEFINE_RESULT__ = function (_socialShareDirective, _socialShareService) {
 		var _socialShareDirective2 = _interopRequireDefault(_socialShareDirective);
 
 		var _socialShareService2 = _interopRequireDefault(_socialShareService);
-
-		var _indexController2 = _interopRequireDefault(_indexController);
 
 		function _interopRequireDefault(obj) {
 			return obj && obj.__esModule ? obj : {
@@ -59,7 +57,7 @@
 			};
 		}
 
-		angular.module(['SocialShare'], []).service('SocialShareService', _socialShareService2.default).directive('socialShare', _socialShareDirective2.default.directiveFactory).controller('indexController', _indexController2.default);
+		angular.module(['ngSocialShare'], []).service('SocialShareService', _socialShareService2.default).directive('socialShare', _socialShareDirective2.default.directiveFactory);
 	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 /***/ },
@@ -274,7 +272,15 @@
 	                    return window.open(uri, '_blank');
 	                }
 
-	                window.open(uri, 'targetWindow', '\n\t\t\ttoolbar=no,\n\t\t\tlocation=no,\n\t\t\tstatus=no,\n\t\t\tmenubar=no,\n\t\t\tscrollbars=yes,\n\t\t\tresizable=yes,\n\t\t\tleft=' + popup.left + ',\n\t\t\ttop=' + popup.top + ',\n\t\t\twidth=' + popup.width + ',\n\t\t\theight=' + popup.height);
+	                window.open(uri, 'targetWindow', '\n            toolbar=no,\n            location=no,\n            status=no,\n            menubar=no,\n            scrollbars=yes,\n            resizable=yes,\n            left=' + popup.left + ',\n            top=' + popup.top + ',\n            width=' + popup.width + ',\n            height=' + popup.height);
+
+	                if (window.focus) {
+	                    try {
+	                        targetWindow.focus();
+	                    } catch (e) {
+	                        alert('Yikes! Looks like popups are disabled on your browser. Please enable them for this website for seamless experience :)');
+	                    }
+	                }
 	            }
 	        }, {
 	            key: '_attachClickHandler',
@@ -288,16 +294,16 @@
 	            }
 	        }, {
 	            key: '_populateNetworksHolder',
-	            value: function _populateNetworksHolder($el, enabledNetworks) {
+	            value: function _populateNetworksHolder($el, en) {
 	                var networks = [];
 	                var _iteratorNormalCompletion = true;
 	                var _didIteratorError = false;
 	                var _iteratorError = undefined;
 
 	                try {
-	                    for (var _iterator = enabledNetworks[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	                    for (var _iterator = en[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
 	                        var n = _step.value;
-	                        if (this.enabledNetworks.indexOf(n) > -1) networks.push(n);
+	                        if (en.indexOf(n) > -1) networks.push(n);
 	                    }
 	                } catch (err) {
 	                    _didIteratorError = true;
@@ -548,97 +554,6 @@
 
 	    exports.default = SocialShareService;
 	    SocialShareService.$inject = ['$document', '$window'];
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-/***/ },
-/* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
-
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports], __WEBPACK_AMD_DEFINE_RESULT__ = function (exports) {
-	    Object.defineProperty(exports, "__esModule", {
-	        value: true
-	    });
-
-	    function _classCallCheck(instance, Constructor) {
-	        if (!(instance instanceof Constructor)) {
-	            throw new TypeError("Cannot call a class as a function");
-	        }
-	    }
-
-	    var IndexController = function IndexController() {
-	        _classCallCheck(this, IndexController);
-
-	        this.shareOptions1 = {
-	            enabledNetworks: ['twitter', 'pinterest', 'googlePlus', 'email'],
-	            title: 'Paradise - ColdpLay',
-	            description: 'Lord of Mercy I\'m beggin u please. POwerful',
-	            url: 'http://musejam.com',
-	            networks: {
-	                facebook: {
-	                    title: '',
-	                    description: '',
-	                    caption: '',
-	                    appId: null,
-	                    loadWidget: false
-	                },
-	                twitter: {
-	                    text: '',
-	                    url: '',
-	                    hashtags: 'ColdpLay,Paradise',
-	                    via: 'rishabm',
-	                    related: 'psvalent88'
-	                },
-	                pinterest: {
-	                    description: ''
-	                },
-	                googlePlus: {},
-	                email: {
-	                    title: '',
-	                    description: ''
-	                },
-	                whatsapp: {
-	                    description: ''
-	                }
-	            }
-	        };
-	        this.shareOptions2 = {
-	            enabledNetworks: ['facebook', 'pinterest', 'twitter', 'email'],
-	            title: 'OO yeah',
-	            description: 'Adele',
-	            url: window.location.url,
-	            networks: {
-	                facebook: {
-	                    title: '',
-	                    description: '',
-	                    caption: '',
-	                    appId: null,
-	                    loadWidget: false
-	                },
-	                twitter: {
-	                    text: '',
-	                    url: '',
-	                    hashtags: '',
-	                    via: 'musejam',
-	                    related: ''
-	                },
-	                pinterest: {
-	                    description: ''
-	                },
-	                googlePlus: {},
-	                email: {
-	                    title: '',
-	                    description: ''
-	                },
-	                whatsapp: {
-	                    description: ''
-	                }
-	            }
-	        };
-	    };
-
-	    exports.default = IndexController;
 	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 /***/ }
